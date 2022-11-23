@@ -68,7 +68,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="addCountryModalLabel">
-              Escriba los datos de un país.
+              Escriba los datos de un nuevo país.
             </h1>
             <button
               type="button"
@@ -154,9 +154,9 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
-              ¿Está seguro que quiere borrar este país?
-            </h1>
+            <h3 class="modal-title fs-5" id="deleteCountryModalLabel">
+              ¿Está seguro que quiere borrar este país: {{countryToDelete?.name}}?
+            </h3>
           </div>
           <div class="modal-footer">
             <button

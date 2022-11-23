@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
   }
 
   public onAddCountry(addForm: NgForm): void {
-    console.log(addForm.value);
     this.countryService.addCountry(addForm.value).subscribe(
       (response: Country) => {
         console.log(response);
