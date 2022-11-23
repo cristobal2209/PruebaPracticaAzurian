@@ -8,6 +8,7 @@ Este programa se encarga de disponibilizar a un cliente una tabla de países des
 * Maven 3.8.6.
 * MySQL 8.0.
 * Visual Studio Code como editor de código.
+* MySQL Workbench para manipulación de la base de datos.
 
 ### Extensiones de Visual Studio Code
 * Extension Pack for Java (Este permite trabajar con Maven en VSC).
@@ -26,7 +27,7 @@ CREATE TABLE `country` (
   `name` varchar(255) DEFAULT NULL,
   `president` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 ```
 Insertando datos iniciales en la tabla 'country':
 ```sql
