@@ -27,7 +27,7 @@ CREATE TABLE `country` (
   `name` varchar(255) DEFAULT NULL,
   `president` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-);
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
 Insertando datos iniciales en la tabla 'country':
 ```sql
