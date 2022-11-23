@@ -15,19 +15,167 @@
                 <th scope="col">Continente</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody *ngIf="btnListar == true">
               <tr *ngFor="let country of countries">
-                <th>{{country.id}}</th>
-                <td>{{country.name}}</td>
-                <td>{{country.president}}</td>
-                <td>{{country.continent}}</td>
+                <th>{{country?.id}}</th>
+                <td>{{country?.name}}</td>
+                <td>{{country?.president}}</td>
+                <td>{{country?.continent}}</td>
+                <td>
+                  <button
+                    (click)="setCountryToDelete(country)"
+                    type="button"
+                    class="btn btn-danger btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteCountryModal"
+                  >
+                    X
+                  </button>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="d-flex flex-row">
-          <div class="py-3">
-            <button class="btn btn-primary">Listar países</button>
+          <div type="button" class="py-3">
+            <button (click)="onClickBtnListar()" class="btn btn-primary">
+              Listar países
+            </button>
+          </div>
+          <div class="py-3 px-3">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#addCountryModal"
+            >
+              Agregar país
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Agregar país -->
+    <div
+      class="modal fade"
+      id="addCountryModal"
+      tabindex="-1"
+      aria-labelledby="addCountryModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="addCountryModalLabel">
+              Escriba los datos de un país.
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- formulario país -->
+            <form
+              #addCountryForm="ngForm"
+              (ngSubmit)="onAddCountry(addCountryForm)"
+            >
+              <div class="mb-4 form-group">
+                <!-- campo nombre del país -->
+                <label for="presidentName" class="form-label"
+                  >Nombre país</label
+                >
+                <input
+                  ngModel
+                  name="presidentName"
+                  type="text"
+                  class="form-control"
+                  id="presidentName"
+                  name="name"
+                />
+              </div>
+
+              <!-- campo presidente del país -->
+              <div class="mb-4 form-group">
+                <label for="countryPresident" class="form-label"
+                  >Presidente</label
+                >
+                <input
+                  ngModel
+                  name="countryPresident"
+                  type="text"
+                  class="form-control"
+                  id="countryPresident"
+                  name="president"
+                />
+              </div>
+
+              <!-- campo continente del país -->
+              <div class="mb-4 form-group">
+                <label for="countryContinent" class="form-label"
+                  >Continente</label
+                >
+                <input
+                  ngModel
+                  name="countryContinent"
+                  type="text"
+                  class="form-control"
+                  id="countryContinent"
+                  name="continent"
+                />
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                >
+                  Listo
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal eliminar país -->
+    <div
+      class="modal fade"
+      id="deleteCountryModal"
+      tabindex="-1"
+      aria-labelledby="deleteCountryModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              ¿Está seguro que quiere borrar este país?
+            </h1>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              No
+            </button>
+            <button
+              (click)="onDeleteCountry(countryToDelete?.id)"
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              Si
+            </button>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ public class Country implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
-    private int Id;
+    private int id;
     private String name;
     private String president;
     private String continent;
@@ -18,18 +18,18 @@ public class Country implements Serializable{
     }
     
     public Country(int Id, String name, String president, String continent) {
-        this.Id = Id;
+        this.id = Id;
         this.name = name;
         this.president = president;
         this.continent = continent;
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int Id) {
-        this.Id = Id;
+        this.id = Id;
     }
 
     public String getName() {

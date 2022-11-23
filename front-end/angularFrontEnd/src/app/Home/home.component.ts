@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Country } from '../Model/country';
 import { CountryService } from '../Service/country.service';
 
@@ -10,11 +11,13 @@ import { CountryService } from '../Service/country.service';
 })
 export class HomeComponent implements OnInit {
   public countries: Country[];
+  public btnListar: boolean = false;
+  public countryToDelete: Country;
 
-  constructor(private countryService: CountryService) { }
+  constructor(private countryService: CountryService) {}
 
   ngOnInit(): void {
-      this.getCountries();
+    this.getCountries();
   }
 
   public getCountries(): void {
@@ -26,5 +29,40 @@ export class HomeComponent implements OnInit {
         alert(error.message);
       }
     );
+  }
+
+  public onAddCountry(addForm: NgForm): void {
+    console.log(addForm.value);
+    this.countryService.addCountry(addForm.value).subscribe(
+      (response: Country) => {
+        console.log(response);
+        this.getCountries();
+        addForm.reset();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+        addForm.reset();
+      }
+    );
+  }
+
+  public onDeleteCountry(countryId: number): void {
+    this.countryService.deleteCountry(countryId).subscribe(
+      (response: void) => {
+        console.log(response);
+        this.getCountries();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+
+  public setCountryToDelete(country: Country) {
+    this.countryToDelete = country;
+  }
+
+  public onClickBtnListar() {
+    this.btnListar = true;
   }
 }

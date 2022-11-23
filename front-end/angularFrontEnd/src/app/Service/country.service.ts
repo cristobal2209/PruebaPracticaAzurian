@@ -15,4 +15,16 @@ export class CountryService {
   public getCountries(): Observable<Country[]> {
     return this.http.get<Country[]>(`${this.apiServerUrl}/pais/todos`);
   }
+
+  public addCountry(country: Country): Observable<Country> {
+    return this.http.post<Country>(`${this.apiServerUrl}/pais/agregar`, country);
+  }
+
+  public updateCountry(country: Country): Observable<Country> {
+    return this.http.put<Country>(`${this.apiServerUrl}/pais/actualizar`, country);
+  }
+
+  public deleteCountry(countryId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiServerUrl}/pais/borrar/${countryId}`);
+  }
 }

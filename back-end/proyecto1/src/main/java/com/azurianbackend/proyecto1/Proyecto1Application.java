@@ -16,6 +16,7 @@ public class Proyecto1Application {
 		SpringApplication.run(Proyecto1Application.class, args);
 	}
 
+	//filtro CORS realizado por juniorro, recuperado de https://github.com/getarrays/employeemanager
 	@Bean
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
