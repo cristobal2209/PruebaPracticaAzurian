@@ -19,7 +19,7 @@ Este programa se encarga de disponibilizar a un cliente una tabla de países des
 
 ## Scripts de creación de tablas y datos en MySQL.
 
-Creación de la tabla 'country' en el schema 'prueba-azurian', conteniendo los atributos 'id', 'name', 'president', y 'continent':
+Creación de la tabla 'country', conteniendo los atributos 'id', 'name', 'president', y 'continent':
 ```sql
 CREATE TABLE `country` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -56,6 +56,7 @@ Para cambiar los parámetros de conexiones, tanto para front-end como back-end s
 * Implementación de testeos: Implementar los tests a consultas http por cada módulo que lo necesite es un proceso largo, que no se alcanzó a realizar.
 
 El código no tiene alguna instancia de distribución, se debe crear si fuese necesario.
+No se implementaron métodos de manejo de persistencia de la base de datos.
 
 ## Referencias
 filtro CORS realizado por juniorro, recuperado de https://github.com/getarrays/employeemanager
