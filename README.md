@@ -15,7 +15,7 @@ Spring Boot Extension Pack.
 
 Scripts de creación de tablas y datos en MySQL.
 
-Creación de la tabla 'pais' en el schema 'prueba-azurian', conteniendo los atributos 'id', 'name', 'president', y 'continent':
+Creación de la tabla 'country' en el schema 'prueba-azurian', conteniendo los atributos 'id', 'name', 'president', y 'continent':
 
 create table `prueba-azurian`.`country` (
   `id` INT not null,
