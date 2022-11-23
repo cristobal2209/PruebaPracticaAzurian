@@ -20,13 +20,13 @@ Este programa se encarga de disponibilizar a un cliente una tabla de países des
 
 Creación de la tabla 'country' en el schema 'prueba-azurian', conteniendo los atributos 'id', 'name', 'president', y 'continent':
 ```sql
-create table `prueba-azurian`.`country` (
-  `id` INT not null,
-  `name` VARCHAR(255),
-  `president` VARCHAR(255),
-  `continent` VARCHAR(255),
+CREATE TABLE `country` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `continent` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `president` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-);
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
 Insertando datos iniciales en la tabla 'country':
 ```sql
