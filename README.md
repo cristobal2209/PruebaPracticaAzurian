@@ -55,7 +55,7 @@ Para cambiar los parámetros de conexiones, tanto para front-end como back-end s
 * La paginación en tabla: Esto debido a que se pensó ocupar angularMaterials para la paginación, pero al momento de implementar esta librería, se crea una incompatibilidad entre el código de tablas realizado con boostrap y el cómo funcionan las paginaciones en angularMaterials, caso similar con ngx-pagination.
 * Implementación de testeos: Implementar los tests a consultas http por cada módulo que lo necesite es un proceso largo, que no se alcanzó a realizar.
 
-El código no tiene alguna instancia de distribución, se debe crear aún.
+El código no tiene alguna instancia de distribución, se debe crear si fuese necesario.
 
 ## Referencias
 filtro CORS realizado por juniorro, recuperado de https://github.com/getarrays/employeemanager
