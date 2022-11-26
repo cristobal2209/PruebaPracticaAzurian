@@ -51,7 +51,7 @@ Para cambiar los parámetros de conexiones, tanto para front-end como back-end s
 * 'spring.datasource.username' y 'spring.datasource.password' contiene las credenciales para entrar a la BD.
 
 ## Notas
-### Por problemas de tiempo, no se me pudo implementar lo siguiente: 
+### Por problemas de tiempo, no se pudo implementar lo siguiente: 
 * La paginación en tabla: Esto debido a que se pensó ocupar angularMaterials para la paginación, pero al momento de implementar esta librería, se crea una incompatibilidad entre el código de tablas realizado con boostrap y el cómo funcionan las paginaciones en angularMaterials, caso similar con ngx-pagination.
 * Implementación de testeos: Implementar los tests a consultas http por cada módulo que lo necesite es un proceso largo, que no se alcanzó a realizar.
 
