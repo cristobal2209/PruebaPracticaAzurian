@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Country } from '../Model/country';
-import { CountryService } from '../Service/country.service';
+import { CountryService } from '../Services/country.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   public countries: Country[];
   public countryToDelete: Country;
 
-  constructor(private countryService: CountryService) {}
+  constructor(private countryService: CountryService) { }
 
   ngOnInit(): void {
     this.getCountries();
