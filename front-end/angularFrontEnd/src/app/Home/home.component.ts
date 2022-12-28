@@ -11,7 +11,6 @@ import { CountryService } from '../Service/country.service';
 })
 export class HomeComponent implements OnInit {
   public countries: Country[];
-  public btnListar: boolean = false;
   public countryToDelete: Country;
 
   constructor(private countryService: CountryService) {}
@@ -59,9 +58,5 @@ export class HomeComponent implements OnInit {
 
   public setCountryToDelete(country: Country) {
     this.countryToDelete = country;
-  }
-
-  public onClickBtnListar() {
-    this.btnListar = true;
   }
 }
